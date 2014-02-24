@@ -63,15 +63,15 @@ class BlockMedia extends WP_Widget {
 				?>
 				<section>
 					<div class="row media-first">
-						<div class="col-md-12 col-lg-12">
+						<div class="col-md-12 col-lg-12 col-sm-12">
 							<a href="<?php echo get_permalink($arr[0]->ID); ?>" class="media"><img src="<?php echo $arr[0]->img_src; ?>" alt="" class="img-responsive"></a>	
 						</div>
 					</div>
 					<div class="row media-second">
-						<div class="col-md-6 col-lg-6 col-sm-6">
+						<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
 							<a href="<?php echo get_permalink($arr[1]->ID); ?>" class="media"><img src="<?php echo $arr[1]->img_src; ?>" alt="" class="img-responsive"></a>
 						</div>
-						<div class="col-md-6 col-lg-6 col-sm-6">
+						<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
 							<a href="<?php echo get_permalink($arr[2]->ID); ?>" class="media"><img src="<?php echo $arr[2]->img_src; ?>" alt="" class="img-responsive"></a>
 						</div>
 					</div>

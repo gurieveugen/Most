@@ -46,7 +46,7 @@ class BlockTruppa extends WP_Widget {
  			}
  			$members[] = '<a href="'.get_permalink($value->ID).'"><img src="'.$img_src.'" alt="'.$value->post_title.'"></a>';
 		} 			
-		echo $this->gctruppa->displayRows($members, 3, 'col-md-4 col-lg-4 col-sm-4');
+		echo $this->gctruppa->displayRows($members, 3, 'col-md-4 col-lg-4 col-sm-4 col-xs-4');
 		echo '</section>';
 		echo $after_widget;
 	}

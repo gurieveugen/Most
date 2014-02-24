@@ -11,7 +11,11 @@ jQuery(document).ready(function() {
 				height	: 50
 			}
 		}
-	});
+	});	
+});
+
+jQuery(window).load(function(){
+	jQuery('#gccalendar').css({'height': jQuery('.block-promo img').height()-50 });
 });
 
 function showForm(id)

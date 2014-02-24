@@ -17,8 +17,7 @@ require_once 'includes/widget_block_social.php';
 // =========================================================
 if(!is_admin())
 {
-	wp_enqueue_style('main-style', TP.'/style.css', false, false, 'screen and (min-width:1025px)');
-	wp_enqueue_style('main-style-tablet', TP.'/style_tablet.css', false, false, 'screen and (max-width:1024px)');
+	wp_enqueue_style('main-style', TP.'/style.css', false, false);
 	wp_enqueue_style('reset', TP.'/css/bootstrap.min.css');	
 	wp_enqueue_style('font-awesome', TP.'/css/font-awesome.min.css');
 	wp_enqueue_script('MOST',TP.'/js/most.js', array('jquery'));
@@ -66,7 +65,7 @@ register_sidebar(array(
 add_image_size('media-image', 580, 320, true);
 add_image_size('member-image', 160, 150, true);
 add_image_size('widget-image', 210, 220, true);
-add_image_size('row-first-image', 870, 260, true);
+add_image_size('row-first-image', 870, 440, true);
 add_image_size('row-second-image', 580, 260, true);
 add_image_size('ticket-image', 280, 400, true);
 

@@ -33,9 +33,8 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><?php echo $value->post_title; ?> // </span>
-							<span class="time"><?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
-							<span class="date"><?php echo $day.' '.$month.' '.$year; ?></span>
+							<span class="title"><?php echo $value->post_title; ?></span>						
+							<span class="date"><?php echo $day.' '.$month.' '.$year; ?>  // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
 							<a href="<?php echo get_permalink($key); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><span><?php echo $gcevents->l('buy_tickets'); ?></span></a>
@@ -72,9 +71,8 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><?php echo $value->post_title; ?> //</span>
-							<span class="time"><?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
-							<span class="date"><?php echo $day.' '.$month.' '.$year; ?></span>
+							<span class="title"><?php echo $value->post_title; ?></span>
+							<span class="date"><?php echo $day.' '.$month.' '.$year; ?> // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
 							<a href="<?php echo get_permalink($key); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><i class="fa-ticket fa-2x" style="background: transparent"></i></a>
