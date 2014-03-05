@@ -65,7 +65,7 @@ register_sidebar(array(
 add_image_size('media-image', 580, 320, true);
 add_image_size('member-image', 160, 150, true);
 add_image_size('widget-image', 210, 220, true);
-add_image_size('row-first-image', 870, 440, true);
+add_image_size('row-first-image', 870, 508, true);
 add_image_size('row-second-image', 580, 260, true);
 add_image_size('ticket-image', 280, 400, true);
 

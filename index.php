@@ -33,7 +33,7 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><?php echo $value->post_title; ?></span>						
+							<span class="title"><a href="<?php echo get_permalink($key); ?>"><?php echo $value->post_title; ?></a></span>						
 							<span class="date"><?php echo $day.' '.$month.' '.$year; ?>  // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
@@ -71,7 +71,7 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><?php echo $value->post_title; ?></span>
+							<span class="title"><a href="<?php echo get_permalink($key); ?>"><?php echo $value->post_title; ?></a></span>
 							<span class="date"><?php echo $day.' '.$month.' '.$year; ?> // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
