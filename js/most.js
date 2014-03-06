@@ -20,5 +20,6 @@ jQuery(window).load(function(){
 
 function showForm(id)
 {
-	jQuery(id).show(500);
+	jQuery(id).show(500);	
+	jQuery('.main-section').animate({scrollTop: jQuery(id).offset().top}, 1000);
 }

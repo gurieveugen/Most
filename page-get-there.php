@@ -35,7 +35,7 @@ the_post();
 		<form action="" method="post" id="get-there-form">
 			<div class="get-there-wrap">
 				<div class="row">
-					<div class="col-md-3 col-lg-3">
+					<div class="col-md-3 col-lg-3 col-xs-12">
 						<input type="text" name="getthere[family]" placeholder="Фамилия*:" class="row">
 						<input type="text" name="getthere[name]" placeholder="Имя*:" class="row">
 						<input type="text" name="getthere[old]" placeholder="Возраст*:" class="row">
@@ -43,7 +43,7 @@ the_post();
 						<input type="text" name="getthere[email]" placeholder="Почта*:" class="row">
 						<input type="text" name="getthere[phone]" placeholder="Телефон*:" class="row">
 					</div>
-					<div class="col-md-9 col-lg-9">
+					<div class="col-md-9 col-lg-9 col-xs-12">
 						<div class="padding-left-30">
 							<select name="getthere[type]" id="" class=".styler" placeholder="Тип учебной группы*:">
 								<option value="1">Тип 1</option>

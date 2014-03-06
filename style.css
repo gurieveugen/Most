@@ -79,7 +79,8 @@ body img{
 	                                        */
 header.main-header{
 	position: relative;
-	width: 8%;
+	width: 110px;
+	min-width: 65px;
 	height: 100%;
 	background: #2d3e50;
 	float: left;
@@ -121,13 +122,28 @@ header.main-header ul.menu li ul{
 }
 
 header.main-header ul.menu li a{
-	width: 100%;
+	width: 110px;
 	color: white;
-	display: table;
+	display: block;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 20px 0;
 	position: relative;
+	height: 110px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+header.main-header ul.menu li ul li a{
+	height: auto;
+	display: inline-block;
+	height: auto;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
 }
 
 header.main-header ul.menu > li > a:hover,
@@ -168,11 +184,14 @@ header.main-header ul.menu li a:hover{
 	/____/_____/\____/ /_/ /___/\____/_/ |_/   
 	                                           */
 section.main-section{
-	width: 92%;
-	margin: 0 0 0 8%;
 	height: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 section.main-section .row-firts .additional-info{
@@ -497,6 +516,35 @@ h2.member-text{
 	color: #00a9e1;
 }
 
+.news-header{
+	padding: 0 0 0 40px;
+}
+
+.news-header .arrow-back{
+	background: url(img/arrow_back.png) no-repeat;
+	width: 22px;
+	height: 25px;
+	margin-right: 40px;
+}
+
+.news{
+	font-family: 'CenturyGothicRegular';
+}
+
+.news h3{
+	font-family: 'CenturyGothicBold';
+	margin-top: 0;
+}
+
+.news .date{
+	color: #868888;
+}
+
+.news .col-md-3,
+.news .col-lg-3{
+	padding: 0 42px 0 0;
+}
+
 .ticket{
 	margin: 45px 0 0 0;
 }
@@ -545,8 +593,7 @@ h2.member-text{
 	background: #00a9e1 url(img/btn_page.jpg) no-repeat;
 	background-size: cover;
 	border: none;
-	width: 226px;
-	height: 56px;
+	padding: 10px 15px;
 	text-align: center;
 	margin-top: 20px;
 }
@@ -568,7 +615,7 @@ h2.member-text{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	display: none;
 }
 
@@ -581,6 +628,9 @@ h2.member-text{
 	margin: 0 0 26px 0;
 }
 
+.get-there form input::-webkit-input-placeholder { color: #8dcce1; }
+.get-there form textarea::-webkit-input-placeholder { color: #8dcce1; }
+
 .get-there form textarea{
 	background: #008ebd;
 	color: #8dcce1;
@@ -588,6 +638,7 @@ h2.member-text{
 	border: none;
 	padding: 6px 14px;
 	display: block;
+	width: 100%;
 }
 
 .get-there form select{
@@ -623,6 +674,7 @@ h2.member-text{
 .media-header{
 	text-align: center;
 	border-bottom: 1px solid #00a9e1;
+	height: 110px;
 }
 
 .media-header li{	
@@ -665,9 +717,12 @@ h2.member-text{
 .icon-logo{
 	background: url("img/icons/logo.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
 	display: inline-block;
-	height: 40px;
+	height: 50%;
+	left: 7px;
 	margin: 10px;
-	width: 60px;
+	position: absolute;
+	top: 20px;
+	width: 70%;
 }
 
 .icon-menu{
@@ -711,18 +766,29 @@ h2.member-text{
 }
 
 
-
-
-
 @media screen and (min-width: 200px){
 	section.main-section .blocks section{
 		height: 480px;
+	}
+
+	header.main-header{
+		width: 67px;
+	}
+
+	header.main-header ul.menu li a{
+		width: 67px;
+		height: 67px;
 	}
 
 	header.main-header > ul > li > a > span{
 		display: none;
 	}
 
+	.icon-logo{
+		top: 15%;
+		left: 1%;
+	}
+	
 	.icon-menu,
 	.icon-poster,
 	.icon-tickets,
@@ -733,23 +799,40 @@ h2.member-text{
 		max-width: 28px;
 	}
 
-	.icon-logo{
-		height: 30px;
-		background-position: 0 0;
-		max-width: 40px;
+	.padding-left-30{ 
+		padding: 0 0 30px 0;
 	}
+
 }
 
+@media screen and (min-width: 990px){
+	.padding-left-30{ 
+		padding: 0 0 0 30px;
+	}
+}
 
 @media screen and (min-width: 1290px){
 	section.main-section .blocks section{
 		height: 380px;
 	}
 
+	header.main-header{
+		width: 110px;
+	}
+
+	header.main-header ul.menu li a{
+		width: 110px;
+		height: 110px;
+	}
+
 	header.main-header > ul > li > a > span{
 		display: inline-block;
 	}
-	
+
+	.icon-logo{
+		top: 19%;
+		left: 5%;
+	}
 	
 	.icon-poster,
 	.icon-tickets,
@@ -763,16 +846,6 @@ h2.member-text{
 		height: 20px;
 		background-position: 5px 0;
 	}
-
-	.icon-logo{
-		background-position: 0 0;
-		height: 44px;
-		left: 20%;
-		max-width: 80px;
-		position: absolute;
-		top: 10px;
-	}
-
 }
 
 @media screen and (min-width: 1590px){
