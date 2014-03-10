@@ -67,10 +67,6 @@ body i{
 	font-style: normal;
 }
 
-body img{
-	width: 100%;
-}
-
 /*	    __  ___________    ____  __________ 
 	   / / / / ____/   |  / __ \/ ____/ __ \
 	  / /_/ / __/ / /| | / / / / __/ / /_/ /
@@ -374,6 +370,16 @@ section.main-section .blocks .block-truppa .row{
 	height: 33.333333333%;
 }
 
+section.main-section .blocks .block-truppa .row a:hover:after{
+	content: attr(title);
+	color: white;
+	background: #00bfff;
+	position: absolute;
+	bottom: 11px;
+	right: 11px;
+	padding: 15px;
+}
+
 section.main-section .blocks .widget_text{
 	padding: 0 30px 0 40px;
 	color: #2891b3;
@@ -543,6 +549,35 @@ h2.member-text{
 .news .col-md-3,
 .news .col-lg-3{
 	padding: 0 42px 0 0;
+
+}
+
+.news .col-md-3 img,
+.news .col-lg-3 img{
+	width: 100%;
+	height: auto;
+}
+
+.news-mini{
+	margin-bottom: 40px;
+}
+
+.news-mini h3 a{
+	color: black;
+}
+
+.news-mini .date{
+	display: block;
+}
+
+.all-news-link a{
+	font-family: 'CenturyGothicBold';
+	text-decoration: underline;
+	color: #007ca5;
+}
+
+.members img{
+	width: 100%;
 }
 
 .ticket{
@@ -607,6 +642,10 @@ h2.member-text{
 	float: left;
 	width: 100%;
 	margin-top: 30px;
+}
+
+.get-there img{
+	width: 100%;
 }
 
 .get-there form{
@@ -697,6 +736,50 @@ h2.member-text{
 	color: #00a9e1;
 }
 
+.media-header .caret{
+	border-left: 6px solid rgba(0, 0, 0, 0);
+	border-right: 6px solid rgba(0, 0, 0, 0);
+	border-top: 6px solid;
+	display: inline-block;
+	height: 0;
+	margin-left: 3px;
+	vertical-align: middle;
+	width: 0;
+}
+
+.dropdown > ul{
+	position: absolute;
+	top: 70px;
+	min-width: 200px;
+	height: 0;
+}
+.open ul{
+	display: block;
+}
+.dropdown > ul > li{
+	background: #00bfff;
+	color: white;
+	height: auto;
+	width: 100%;
+	display: block;
+	display: none;
+}
+
+.dropdown > ul > li > a{
+	color: #FFFFFF;
+	display: block;
+	line-height: 40px;
+	padding: 0 5px;
+	text-align: left;
+}
+
+.dropdown > ul > li > a:hover{
+	color: #00bfff;
+	background: white;	
+	text-decoration: none;
+	outline: 2px solid #00bfff;
+}
+
 .media-content{
 	list-style: none;
 	padding: 25px 65px;
@@ -712,6 +795,48 @@ h2.member-text{
 	font-family: arial;
 	color: #00a9e1;
 	margin: 0 20px 0 0;
+}
+
+.media-repertuar{
+	list-style: none;
+	padding: 0px 65px 25px 65px;
+}
+
+.media-repertuar li{
+	margin: 15px 20px;
+	position: relative;
+}
+
+.media-repertuar li:before{
+	content: "\25A0";
+	font-size: 28px;
+	font-family: arial;
+	color: #00a9e1;
+	position: absolute;
+	top: -10px;
+	left: -40px;	
+}
+
+.media-repertuar h3 a{
+	color: black;
+	font-family: 'CenturyGothicBold';
+}
+
+.repertuar-objects{
+	padding-right: 200px;
+}
+
+.repertuar-objects .item{
+	margin: 0 0 70px 70px;
+}
+
+.repertuar-objects .item h3 a{
+	color: black;
+	font-family: 'CenturyGothicBold';
+}
+
+.repertuar-objects .item span{
+	color: #4d4d4d;
 }
 
 .icon-logo{
@@ -765,10 +890,53 @@ h2.member-text{
 	width: 38px;
 }
 
+.icon-list{
+	background: url("img/icon_list.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
+}
+
+.icon-list-disabled{
+	background: url("img/icon_list_disabled.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);	
+}
+
+.icon-list-disabled,
+.icon-list{
+	display: inline-block;
+	height: 18px;
+	margin: 5px 0 0 65px;
+	width: 16px;
+}
+
+.icon-object{
+	background: url("img/icon_object.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
+}
+
+.icon-object-disabled{
+	background: url("img/icon_object_disabled.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);	
+}
+
+.icon-object-disabled,
+.icon-object{
+	display: inline-block;
+	height: 18px;
+	margin: 5px 0 0 25px;
+	width: 16px;
+}
+
+
+
+
+.tickets img{
+	width: 100%;
+}
+
 
 @media screen and (min-width: 200px){
 	section.main-section .blocks section{
 		height: 480px;
+	}
+
+	section.main-section .blocks .block-truppa{
+		padding: 0 0 0 0;
 	}
 
 	header.main-header{
@@ -808,6 +976,10 @@ h2.member-text{
 @media screen and (min-width: 990px){
 	.padding-left-30{ 
 		padding: 0 0 0 30px;
+	}
+
+	section.main-section .blocks .block-truppa{
+		padding: 0 70px 0 0;
 	}
 }
 

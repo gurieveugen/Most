@@ -25,7 +25,15 @@ the_post();
 		}
 		else
 		{
-			the_content();
+			?>
+			<div class="row news">				
+				<div class="col-md-12 col-lg-12">
+					<h3><?php the_title(); ?></h3>
+					<span class="date"><?php the_date('d.m.Y'); ?></span>
+					<?php the_content(); ?>
+				</div>
+			</div>
+			<?php
 		}
 		?>
 	</div>

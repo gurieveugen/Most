@@ -12,6 +12,8 @@ jQuery(document).ready(function() {
 			}
 		}
 	});	
+
+	jQuery('.dropdown-toggle').dropdown();
 });
 
 jQuery(window).load(function(){

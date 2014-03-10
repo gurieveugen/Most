@@ -44,7 +44,8 @@ class BlockTruppa extends WP_Widget {
  				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($value->ID), 'member-image');
  				$img_src = $img_src[0];
  			}
- 			$members[] = '<a href="'.get_permalink($value->ID).'"><img src="'.$img_src.'" alt="'.$value->post_title.'"></a>';
+ 			$short_title = substr($value->post_title, 0, strpos($value->post_title, ' ') + 3).'.';
+ 			$members[] = '<a href="'.get_permalink($value->ID).'" title="'.$short_title.'"><img src="'.$img_src.'" alt="'.$value->post_title.'"></a>';
 		} 			
 		echo $this->gctruppa->displayRows($members, 3, 'col-md-4 col-lg-4 col-sm-4 col-xs-4');
 		echo '</section>';

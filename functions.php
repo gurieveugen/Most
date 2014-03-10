@@ -6,6 +6,7 @@ define('TP', get_bloginfo('template_url'));
 // =========================================================
 require_once 'includes/gctruppa_post_type.php';
 require_once 'includes/gcmultimedia_post_type.php';
+require_once 'includes/gcrepertuar_post_type.php';
 require_once 'includes/widget_block_news.php';
 require_once 'includes/widget_block_media.php';
 require_once 'includes/widget_block_truppa.php';
@@ -21,6 +22,7 @@ if(!is_admin())
 	wp_enqueue_style('reset', TP.'/css/bootstrap.min.css');	
 	wp_enqueue_style('font-awesome', TP.'/css/font-awesome.min.css');
 	wp_enqueue_script('MOST',TP.'/js/most.js', array('jquery'));
+	wp_enqueue_script('Bootstrap',TP.'/js/bootstrap.min.js', array('MOST'));
 	
 }
 
@@ -65,9 +67,11 @@ register_sidebar(array(
 add_image_size('media-image', 580, 320, true);
 add_image_size('member-image', 160, 150, true);
 add_image_size('widget-image', 210, 220, true);
+add_image_size('widget-thumb-image', 150, 100, true);
 add_image_size('row-first-image', 870, 508, true);
 add_image_size('row-second-image', 580, 260, true);
 add_image_size('ticket-image', 280, 400, true);
+
 
 add_filter( 'image_size_names_choose', 'namespace_image_size_names_choose' );
 function namespace_image_size_names_choose( $image_sizes ) 

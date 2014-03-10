@@ -55,10 +55,10 @@ class BlockNews extends WP_Widget {
 			$news_items.= '<article>';
 			$news_items.= '<span class="date">'.$day.' '.$month.' '.$year.'</span>';
 			$news_items.= '<a href="'.get_permalink($value->ID).'">'.$value->post_title.'</a>';
-			$news_items.= '<span class="description">'.$this->gcevents->get_short_string(200, strip_tags($value->post_content)).'</span>';
+			$news_items.= '<span class="description">'.$this->gcevents->get_short_string(70, strip_tags($value->post_content)).'</span>';
 			$news_items.= '</article>';
 		}	
-		echo $news_items.'</section>'; 	
+		echo $news_items.'<span class="all-news-link"><a href="/news">Все новости >></a></span></section>'; 	
 		echo $after_widget;
 	}
 
