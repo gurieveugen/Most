@@ -407,6 +407,10 @@ section.main-section .page-wrap{
 	padding: 40px;
 }
 
+section.main-section .page-wrap h1{
+	font-family: 'CenturyGothicBold';
+}
+
 .btn-social{
 	width: 50px;
 	height: 50px;
@@ -753,9 +757,39 @@ h2.member-text{
 	min-width: 200px;
 	height: 0;
 }
-.open ul{
+section.main-section ul.media-header .open ul li{
 	display: block;
 }
+
+section.main-section ul.media-header .dropdown > a{
+	font-family: 'CenturyGothicBold';
+}
+
+section.main-section ul.media-header .first-year{
+	margin-left: 60px;
+}
+
+section.main-section ul.media-header .year{
+	margin-left: 35px;
+}
+
+section.main-section ul.media-header .first-year a,
+section.main-section ul.media-header .year a{
+	color: #c0c0c0;
+}
+
+section.main-section ul.media-header .first-year a:hover,
+section.main-section ul.media-header .year a:hover{
+	color: #00a9e1;
+	font-family: 'CenturyGothicBold';
+	text-decoration: none;
+}
+
+section.main-section ul.media-header li.active a{
+	color: #00a9e1;
+	font-family: 'CenturyGothicBold';
+}
+
 .dropdown > ul > li{
 	background: #00bfff;
 	color: white;

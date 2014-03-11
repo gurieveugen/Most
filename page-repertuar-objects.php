@@ -7,7 +7,14 @@ get_header();
 ?>
 <section class="main-section">	
 	<ul class="media-header text-left news-header">					
-		<li><a href="/repertuar-objects">Репертуар</a></li>	
+		<li>
+			<div class="dropdown">
+				<a data-toggle="dropdown" href="#">Репертуар <b class="caret"></b>
+				<ul>
+					<li><a href="/tour">Гастроли</a></li>
+				</ul>
+			</div>			
+		</li>	
 		<li><a href="/repertuar" class="icon-list-disabled"></a></li>
 		<li><a href="#" class="icon-object"></a></li>	
 	</ul>	

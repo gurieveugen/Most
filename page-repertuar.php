@@ -10,7 +10,7 @@ get_header();
 			<div class="dropdown">
 				<a data-toggle="dropdown" href="#">Репертуар <b class="caret"></b>
 				<ul>
-					<li><a href="/gastroli">Gastroli</a></li>
+					<li><a href="/tour">Гастроли</a></li>
 				</ul>
 			</div>			
 		</li>	

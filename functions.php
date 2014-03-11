@@ -7,6 +7,7 @@ define('TP', get_bloginfo('template_url'));
 require_once 'includes/gctruppa_post_type.php';
 require_once 'includes/gcmultimedia_post_type.php';
 require_once 'includes/gcrepertuar_post_type.php';
+require_once 'includes/gctour_post_type.php';
 require_once 'includes/widget_block_news.php';
 require_once 'includes/widget_block_media.php';
 require_once 'includes/widget_block_truppa.php';
@@ -114,5 +115,11 @@ function getAllImagesFromPost($id, $size = 'widget-image')
 		}
 	}
 	return $images;
+}
+
+function active($bool = true)
+{
+	if($bool) return 'active';
+	return '';
 }
 ?>
