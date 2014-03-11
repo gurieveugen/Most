@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Гастроли (Список)
+ * Template name: Гастроли (Объекты)
  */
 get_header(); 
 ?>
@@ -14,8 +14,8 @@ get_header();
 				</ul>
 			</div>			
 		</li>	
-		<li><a href="#" class="icon-list"></a></li>
-		<li><a href="/tour-objects" class="icon-object-disabled"></a></li>	
+		<li><a href="/tour" class="icon-list-disabled"></a></li>
+		<li><a href="#" class="icon-object"></a></li>	
 		<?php
 		$active_year = isset($_GET['y']) ? intval($_GET['y']) : date('Y');
 		$first       = true;
@@ -37,7 +37,7 @@ get_header();
 		}
 		?>
 	</ul>	
-	<ul class="media-repertuar">
+	<div class="row tour-objects">
 	<?php 
 	$items = $GLOBALS['gctour']->getItems(8, false, $active_year);
 	
@@ -45,16 +45,18 @@ get_header();
 	{
 		foreach ($items as $key => $value) 
 		{
+			$default_image = '<img src="http://placehold.it/280x200/0092c3/fff" alt="'.$value->post_title.'">';
+			$img = (has_post_thumbnail($value->ID)) ? '<a href="'.get_permalink($value->ID).'">'.get_the_post_thumbnail($value->ID, 'tour-image').'</a>' : $default_image;
 			?>
-			<li>
-				<h3><a href="<?php the_permalink(); ?>"><?php echo $value->post_title; ?></a></h3>
-				<span><?php echo $GLOBALS['gcevents']->get_short_string(200, strip_tags($value->post_content)); ?></span>
-			</li>
+			<div class="col-md-3 col-lg-3 item">
+				<a href="<?php the_permalink(); ?>"><?php echo $img; ?></a>				
+				<span><?php echo $GLOBALS['gctour']->getRusMonth(date('m', strtotime($value->post_date))); ?>: <?php echo $GLOBALS['gcevents']->get_short_string(200, strip_tags($value->post_content)); ?></span>
+			</div>
 			<?php	
 		}		
 	}
 	?>		
-	</ul><!-- END media-repertuar -->
+	</div>
 	
 <?php
 get_footer();

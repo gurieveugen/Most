@@ -38,7 +38,7 @@ get_header();
 			while(have_posts())
 			{
 				the_post();
-				$default_image = '<img src="http://placehold.it/300x300/0092c3/fff" alt="'.get_the_title().'">';
+				$default_image = '<img src="http://placehold.it/280x395/0092c3/fff" alt="'.get_the_title().'">';
 				$img = (has_post_thumbnail()) ? '<a href="'.get_permalink().'">'.get_the_post_thumbnail(get_the_ID(), 'repertuar-image').'</a>' : $default_image;
 				?>
 				<div class="col-md-3 col-lg-3 item">

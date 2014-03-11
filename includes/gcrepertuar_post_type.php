@@ -28,7 +28,7 @@ class GCRepertuar{
 		// =========================================================
 		add_action('init', array($this, 'createPostTypeRepertuar'));	
 		add_shortcode('repertuar', array($this, 'displayAllRepertuar'));
-		add_image_size('repertuar-image', 395, 280, true);
+		add_image_size('repertuar-image', 280, 395, true);
 	}
 
 	/**

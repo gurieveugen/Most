@@ -28,7 +28,7 @@ class GCTour{
 		// =========================================================
 		add_action('init', array($this, 'createPostTypeTour'));	
 		add_shortcode('tour', array($this, 'displayAllTour'));
-		add_image_size('tour-image', 395, 280, true);
+		add_image_size('tour-image', 280, 200, true);
 	}
 
 	/**
@@ -95,13 +95,16 @@ class GCTour{
 	 * @param  boolean $rand  
 	 * @return array
 	 */
-	public function getItems($count = 8, $rand = false)
+	public function getItems($count = 8, $rand = false, $year = null)
 	{
 		if($rand) $order = 'rand';
 		else $order = 'post_date';
 
+		$c     = ($year == null) ? $count : 500;
+		$limit = $c;
+
 		$args = array(
-			'posts_per_page'   => $count,
+			'posts_per_page'   => $c,
 			'offset'           => 0,
 			'category'         => '',
 			'orderby'          => $order,
@@ -109,7 +112,25 @@ class GCTour{
 			'post_type'        => 'trip',
 			'post_status'      => 'publish',
 			'suppress_filters' => true );
-		return get_posts($args);
+		$arr = get_posts($args);
+		
+		if($year != null)
+		{
+			foreach ($arr as $key => $value) 
+			{
+				if($limit <= 0) break;
+			
+				if(date('Y', strtotime($value->post_date)) == $year)
+				{
+					$arr_new[$key] = $value;
+				}
+
+				$limit--;
+			}	
+			$arr = $arr_new;		
+		}
+
+		return $arr;
 	}
 
 	/**
@@ -133,6 +154,17 @@ class GCTour{
 		}	
 		return $out;
 	}	
+
+	/**
+	 * Get rus month by index
+	 * @param  integer $index 
+	 * @return string
+	 */
+    public function getRusMonth($index)
+    {
+		$arr = array("Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря");
+		return isset($arr[$index]) ? $arr[$index-1] : $arr[0];
+    }
 }
 
 // =========================================================

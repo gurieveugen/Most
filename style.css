@@ -527,7 +527,7 @@ h2.member-text{
 }
 
 .news-header{
-	padding: 0 0 0 40px;
+	padding: 0 0 0 83px;
 }
 
 .news-header .arrow-back{
@@ -872,6 +872,40 @@ section.main-section ul.media-header li.active a{
 .repertuar-objects .item span{
 	color: #4d4d4d;
 }
+
+.tour-objects{
+	padding-right: 200px;
+}
+
+.tour-objects .item{
+	margin: 0 0 70px 70px;
+}
+
+
+.tour-objects .item:after{
+	content: '';
+	display: block;
+	position: absolute;
+	background: black;
+	height: 1px;
+	width: 90%;
+	bottom: -25px;
+	left: 0;
+}
+
+.tour-objects .item img{
+	margin: 0 0 40px 0;
+}
+
+.tour-objects .item h3 a{
+	color: black;
+	font-family: 'CenturyGothicBold';
+}
+
+.tour-objects .item span{
+	color: #4d4d4d;
+}
+
 
 .icon-logo{
 	background: url("img/icons/logo.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
