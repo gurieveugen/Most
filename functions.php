@@ -72,6 +72,7 @@ add_image_size('widget-thumb-image', 150, 100, true);
 add_image_size('row-first-image', 870, 508, true);
 add_image_size('row-second-image', 580, 260, true);
 add_image_size('ticket-image', 280, 400, true);
+add_image_size('gallery-image', 310, 210, true);
 
 
 add_filter( 'image_size_names_choose', 'namespace_image_size_names_choose' );
@@ -85,7 +86,7 @@ function namespace_image_size_names_choose( $image_sizes )
 /**
  * Get all images from post
  */
-function getAllImagesFromPost($id, $size = 'widget-image')
+function getAllImagesFromPost($id, $size = 'gallery-image')
 {
 	$thumb_id = -666;
 	$args     = array(

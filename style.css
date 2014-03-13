@@ -204,6 +204,7 @@ section.main-section .row-firts .additional-info .time{
 
 section.main-section .row-firts .additional-info .btn-ticket{
 	width: 175px;
+	margin: 7px 0 0 0;
 }
 
 section.main-section .row-second .additional-info .btn-ticket{
@@ -378,6 +379,7 @@ section.main-section .blocks .block-truppa .row a:hover:after{
 	bottom: 11px;
 	right: 11px;
 	padding: 15px;
+	white-space: nowrap;
 }
 
 section.main-section .blocks .widget_text{
@@ -524,10 +526,11 @@ img.footer-reklama{
 h2.member-text{
 	font-family: 'CenturyGothicBold';
 	color: #00a9e1;
+	margin: 35px 0 0 0;
 }
 
 .news-header{
-	padding: 0 0 0 83px;
+	padding: 7px 0 0 83px;
 }
 
 .news-header .arrow-back{
@@ -535,6 +538,8 @@ h2.member-text{
 	width: 22px;
 	height: 25px;
 	margin-right: 40px;
+	position: relative;
+	top: 3px;
 }
 
 .news{
@@ -622,6 +627,10 @@ h2.member-text{
 .main-gallery{
 	position: relative;
 	left: 0;
+}
+
+.gallery img{
+	width: 100%;
 }
 
 .btn-on-page{
@@ -990,11 +999,13 @@ section.main-section ul.media-header li.active a{
 	width: 16px;
 }
 
-
-
-
 .tickets img{
 	width: 100%;
+}
+
+.img-100p img{
+	width: 100%;
+	height: auto;
 }
 
 

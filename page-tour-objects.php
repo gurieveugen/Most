@@ -49,7 +49,7 @@ get_header();
 			$img = (has_post_thumbnail($value->ID)) ? '<a href="'.get_permalink($value->ID).'">'.get_the_post_thumbnail($value->ID, 'tour-image').'</a>' : $default_image;
 			?>
 			<div class="col-md-3 col-lg-3 item">
-				<a href="<?php the_permalink(); ?>"><?php echo $img; ?></a>				
+				<a href="<?php echo get_permalink($value->ID); ?>"><?php echo $img; ?></a>				
 				<span><?php echo $GLOBALS['gctour']->getRusMonth(date('m', strtotime($value->post_date))); ?>: <?php echo $GLOBALS['gcevents']->get_short_string(200, strip_tags($value->post_content)); ?></span>
 			</div>
 			<?php	

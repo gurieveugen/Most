@@ -15,7 +15,7 @@ the_post();
 			echo '</h1>';
 			?>
 			<div class="row ticket">
-				<div class="col-md-3 col-lg-3">
+				<div class="col-md-3 col-lg-3 img-100p">
 					<?php the_post_thumbnail('ticket-image'); ?>
 					<button class="btn-on-page" onclick="showForm('#get-there-form');">Подать заявку</button>
 				</div>
