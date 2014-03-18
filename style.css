@@ -520,6 +520,8 @@ img.footer-reklama{
 
 .member-photo img{
 	width: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 
