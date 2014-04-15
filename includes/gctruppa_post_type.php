@@ -169,7 +169,7 @@ class GCTruppa{
 		 	$img_src   = 'http://placehold.it/300x300/0092c3/fff';
  			if(has_post_thumbnail($value->ID))
  			{
- 				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($value->ID), 'thumbnail');
+ 				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($value->ID), 'member-big-image');
  				$img_src = $img_src[0];
  			}
  			$members[] = '<a href="'.get_permalink($value->ID).'" title="'.$value->post_title.'"><img src="'.$img_src.'" alt="'.$value->post_title.'"></a>';

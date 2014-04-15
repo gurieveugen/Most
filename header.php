@@ -24,6 +24,8 @@
 
 	<link rel="stylesheet" href="<?php echo TP; ?>/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 	<script type="text/javascript" src="<?php echo TP; ?>/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	<script src="http://w.cultserv.ru/lib/angular/angular.js"></script>
+  	<script src="http://table.feed.cultserv.ru/js/pnbigfeed_loader.js"></script>
 </head>
 <body <?php body_class(); ?>>
 	<header class="main-header">

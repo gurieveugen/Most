@@ -528,7 +528,7 @@ img.footer-reklama{
 h2.member-text{
 	font-family: 'CenturyGothicBold';
 	color: #00a9e1;
-	margin: 35px 0 0 0;
+	margin: 35px 0 30px 0;
 }
 
 .news-header{
@@ -589,6 +589,12 @@ h2.member-text{
 
 .members img{
 	width: 100%;
+}
+
+.members .row .member{
+	max-height: 365px;
+	max-width: 370px;
+	overflow: hidden;
 }
 
 .ticket{
