@@ -71,7 +71,7 @@ add_image_size('member-big-image', 400, 400, true);
 add_image_size('widget-image', 210, 220, true);
 add_image_size('widget-thumb-image', 150, 100, true);
 add_image_size('row-first-image', 870, 508, true);
-add_image_size('row-second-image', 580, 260, true);
+add_image_size('row-second-image', 580, 310, true);
 add_image_size('ticket-image', 280, 400, true);
 add_image_size('gallery-image', 310, 210, true);
 

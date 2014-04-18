@@ -1016,6 +1016,10 @@ section.main-section ul.media-header li.active a{
 	height: auto;
 }
 
+.text-arial p{
+	font-family: arial;
+}
+
 
 @media screen and (min-width: 200px){
 	section.main-section .blocks section{
@@ -1112,3 +1116,5 @@ section.main-section ul.media-header li.active a{
 		height: 480px;
 	}
 }
+
+

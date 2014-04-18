@@ -17,10 +17,12 @@ else $cost = $meta['cost'].' '.$meta['currency_symbol'].'  <a class="btn-ticket"
 			?>
 			<div class="row ticket">
 				<div class="col-md-3 col-lg-3">
-					<?php the_post_thumbnail('ticket-image'); ?>
+					<div class="img-100p">
+						<?php the_post_thumbnail('ticket-image'); ?>	
+					</div>
 					<span class="cost"><?php echo $cost; ?></span>
 				</div>
-				<div class="col-md-9 col-lg-9"><?php the_content(); ?></div>
+				<div class="col-md-9 col-lg-9 text-arial"><?php the_content(); ?></div>
 			</div>
 			<?php
 		}
