@@ -35,7 +35,7 @@ $media['text']  = $GLOBALS['gcmultimedia']->getMedia(20, false, 'audio');
 
 				if(has_post_thumbnail($value->ID))
 				{
-					echo '<a href="'.get_permalink($value->ID).'">'.get_the_post_thumbnail($value->ID, 'full').'</a>';
+					echo '<a class="media-arrow" href="'.get_permalink($value->ID).'">'.get_the_post_thumbnail($value->ID, 'full').'</a>';
 				}	
 			}
 			?>

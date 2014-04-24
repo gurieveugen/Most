@@ -23,5 +23,20 @@ the_post();
 		}
 		?>
 	</div>
+	<div class="row gallery mt50">
+		<?php 
+		$images = getAllImagesFromPost(get_the_ID()); 
+		if($images)
+		{
+
+			foreach ($images as $key => $value) 
+			{
+				?>
+				<div class="col-md-3 col-lg-3"><a class="fancybox" rel="group" href="<?php echo $value['full']; ?>"><img src="<?php echo $value['small']; ?>" alt="" /></a></div>
+				<?php
+			}
+		}
+		?>
+	</div>
 <?php
 get_footer();

@@ -5,7 +5,7 @@ the_post();
 <section class="main-section">
 	<div class="row">
 		<div class="col-md-3 col-lg-3">
-			<div class="member-photo">
+			<div class="member-photo img-100p">
 				<?php if(has_post_thumbnail()) the_post_thumbnail(); ?>
 			</div>
 		</div>

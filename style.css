@@ -59,7 +59,6 @@ Text Domain: most
 html, body{
 	height: 100%;
 	width: 100%;	
-	font-family: 'CenturyGothicRegular' !important;
 }
 
 body i{
@@ -325,12 +324,14 @@ section.main-section .blocks .block-truppa .col-md-4{
 	height: 100%;
 }
 
+.media-arrow,
 section.main-section .blocks .block-media .media{
 	position: relative;
 	display: block;
 	height: 100%;
 }
 
+.media-arrow:after,
 section.main-section .blocks .block-media .media:after{
 	color: #00bfff;
 	content: "";
@@ -343,6 +344,7 @@ section.main-section .blocks .block-media .media:after{
 	z-index: 2;
 }
 
+.media-arrow:before,
 section.main-section .blocks .block-media .media:before{
 	color: #0092c3;
 	content: "";
@@ -354,11 +356,11 @@ section.main-section .blocks .block-media .media:before{
 	top: 32%;
 	z-index: 1;
 }
-
+.media-arrow:hover:after,
 section.main-section .blocks .block-media .media:hover:after{
 	color: white;
 }
-
+.media-arrow:hover:before,
 section.main-section .blocks .block-media .media:hover:before{
 	color: #CCCCCC;
 }
@@ -1018,6 +1020,14 @@ section.main-section ul.media-header li.active a{
 
 .text-arial p{
 	font-family: arial;
+}
+
+.addthis_toolbox br{
+	display: none;
+}
+
+.mt50{
+	margin-top: 50px;
 }
 
 
