@@ -74,9 +74,13 @@ add_image_size('row-first-image', 870, 508, true);
 add_image_size('row-second-image', 580, 310, true);
 add_image_size('ticket-image', 280, 400, true);
 add_image_size('gallery-image', 310, 210, true);
-
-
 add_filter( 'image_size_names_choose', 'namespace_image_size_names_choose' );
+
+
+// =========================================================
+// POST TYPES
+// =========================================================
+// $GLOBALS['afisha']  = new PostTypeFactory('afisha');
 function namespace_image_size_names_choose( $image_sizes ) 
 {
 	$image_sizes['widget-image'] = __('Размер изображения специально для промо виджета');

@@ -538,14 +538,22 @@ h2.member-text{
 }
 
 .news-header .arrow-back{
-	background: url(img/arrow_back.png) no-repeat;
-	width: 22px;
-	height: 25px;
+	background: url(img/strelka_nazad_1.png) no-repeat;
+	width: 38px;
+	height: 38px;
 	margin-right: 40px;
 	position: relative;
-	top: 3px;
+	top: 9px;
 }
 
+.news-header .arrow-back:hover{
+	background: url(img/strelka_nazad_2.png) no-repeat;
+}
+
+.news-header .arrow-back:active,
+.news-header .arrow-back:focus{
+	background: url(img/strelka_nazad_3.png) no-repeat;
+}
 .news{
 	font-family: 'CenturyGothicRegular';
 }
