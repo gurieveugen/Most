@@ -13,6 +13,8 @@ require_once 'includes/widget_block_media.php';
 require_once 'includes/widget_block_truppa.php';
 require_once 'includes/widget_block_promo.php';
 require_once 'includes/widget_block_social.php';
+require_once 'includes/post_type_factory.php';
+require_once 'includes/lorem_posts.php';
 
 // =========================================================
 // Add styles
@@ -78,9 +80,24 @@ add_filter( 'image_size_names_choose', 'namespace_image_size_names_choose' );
 
 
 // =========================================================
-// POST TYPES
+// АФИША
 // =========================================================
-// $GLOBALS['afisha']  = new PostTypeFactory('afisha');
+$GLOBALS['afisha'] = new PostTypeFactory('afisha', array('label' => 'Афиша', 'icon_code' => 'f0e7'));
+$GLOBALS['afisha']->addMetaBox('Time', array('Time' => 'text'));
+$GLOBALS['afisha']->meta_box_context = 'side';
+// =========================================================
+// АРХИВ
+// =========================================================
+$GLOBALS['archive'] = new PostTypeFactory('archive', array('label' => 'Архив', 'icon_code' => 'f187'));
+$GLOBALS['archive']->addMetaBox('Time', array('Time' => 'text'));
+$GLOBALS['archive']->meta_box_context = 'side';
+// =========================================================
+// GENERATE TEST POSTS
+// =========================================================
+// $lorem_posts = new LoremPosts();
+// $lorem_posts->generatePosts(10, 'archive');
+// $lorem_posts->generatePosts(10, 'afisha');
+
 function namespace_image_size_names_choose( $image_sizes ) 
 {
 	$image_sizes['widget-image'] = __('Размер изображения специально для промо виджета');
