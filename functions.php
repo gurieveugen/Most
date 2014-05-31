@@ -23,7 +23,6 @@ if(!is_admin())
 {
 	wp_enqueue_style('main-style', TP.'/style.css', false, false);
 	wp_enqueue_style('reset', TP.'/css/bootstrap.min.css');	
-	wp_enqueue_style('font-awesome', TP.'/css/font-awesome.min.css');
 	wp_enqueue_script('MOST',TP.'/js/most.js', array('jquery'));
 	wp_enqueue_script('Bootstrap',TP.'/js/bootstrap.min.js', array('MOST'));
 	
