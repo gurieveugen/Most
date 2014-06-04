@@ -12,7 +12,7 @@ the_post();
 			echo '</h1>';
 			?>
 			<div class="row ticket">
-				<div class="col-md-3 col-lg-3"><?php the_post_thumbnail('ticket-image'); ?></div>
+				<div class="col-md-3 col-lg-3 img-100p"><?php the_post_thumbnail('ticket-image'); ?></div>
 				<div class="col-md-9 col-lg-9"><?php the_content(); ?></div>
 			</div>
 			<?php

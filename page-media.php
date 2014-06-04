@@ -32,10 +32,24 @@ $media['text']  = $GLOBALS['gcmultimedia']->getMedia(20, false, 'audio');
 			<?php
 			foreach ($media['video'] as $key => $value) 
 			{
+				$date_time  = strtotime($value->post_date); 
+				$day        = date('d', $date_time);
+				$month      = $gcevents->getRusMonth(date('F', $date_time));
+				$year       = date('Y', $date_time);
+				$time       = date('H:i', $date_time);
 
 				if(has_post_thumbnail($value->ID))
-				{
-					echo '<a class="media-arrow" href="'.get_permalink($value->ID).'">'.get_the_post_thumbnail($value->ID, 'full').'</a>';
+				{					
+					?>
+					<div class="media-block">
+						<a class="media-arrow" href="<?php echo get_permalink($value->ID); ?>"><?php echo get_the_post_thumbnail($value->ID, 'row-first-image'); ?></a>
+						<div class="media-titles">
+							<span class="title"><?php echo $value->post_title; ?></span>
+							<span class="date"><?php echo $day.' '.$month.' '.$year.' // '.$time; ?></span>
+						</div>	
+					</div>
+					
+					<?php										
 				}	
 			}
 			?>

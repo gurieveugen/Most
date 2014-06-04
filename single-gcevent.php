@@ -4,7 +4,12 @@ the_post();
 $meta = get_post_meta($post->ID, 'gcevents', true);		
 if($meta['cost'] == "") $cost = "";
 else if(intval($meta['cost']) == 0) $cost = "Свободный вход!";
-else $cost = '<strong>'.$meta['cost'].' '.$meta['currency_symbol'].'</strong>  <a class="btn-ticket" href="'.$meta['website'].'"><i class="fa-rub fa-2x"></i><span>Купить билеты</span></a>';
+else $cost = '<strong>'.$meta['cost'].' '.$meta['currency_symbol'].'</strong>  <a class="btn-ticket btn-ticket-modal" href="#" data-id="'.$post->ID.'"><i class="fa-rub fa-2x"></i><span>Купить билеты</span></a>';
+$el = $post;
+$el->meta = get_post_meta($value->ID, 'gcevent_urls', true);
+echo $GLOBALS['gcevents']->gcevent_post->getModal($el);
+echo $GLOBALS['gcevents']->gcevent_post->getBuyThere();
+
 ?>
 <section class="main-section">
 	<div class="page-wrap">

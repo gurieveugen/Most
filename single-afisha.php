@@ -11,8 +11,15 @@ $img = (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'ticket-ima
 			<div class="col-md-3 col-lg-3 img-100p">
 				<?php echo $img; ?>
 			</div>
-			<div class="col-md-9 col-lg-9"><?php the_content(); ?></div>
-		</div>		
+			<div class="col-md-9 col-lg-9">
+				<?php the_content(); ?>
+				<div class="row" style="margin-top: 100px">
+					<?php echo do_shortcode('[contact-form-7 id="813" title="Заказ билетов"]'); ?>
+				</div>	
+				
+			</div>
+		</div>	
+		
 	</div>
 <?php
 get_footer();

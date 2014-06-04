@@ -35,11 +35,13 @@ get_header();
 			?>
 			<div class="row repertuar-objects">
 			<?php
+			$items = array();
 			while(have_posts())
 			{
 				the_post();
 				$default_image = '<img src="http://placehold.it/280x395/0092c3/fff" alt="'.get_the_title().'">';
 				$img = (has_post_thumbnail()) ? '<a href="'.get_permalink().'">'.get_the_post_thumbnail(get_the_ID(), 'repertuar-image').'</a>' : $default_image;
+				ob_start();
 				?>
 				<div class="col-md-3 col-lg-3 item">
 					<?php echo $img; ?>
@@ -47,7 +49,11 @@ get_header();
 					<span><?php echo $GLOBALS['gcevents']->get_short_string(200, strip_tags(get_the_content())); ?></span>
 				</div>
 				<?php
+				$var = ob_get_contents();
+				array_push($items, $var);
+    			ob_end_clean();
 			}
+			printPerRow($items);
 			?>
 			</div>
 			<?php

@@ -61,11 +61,6 @@ html, body{
 	width: 100%;	
 }
 
-body i{
-	font-family: 'fontawesome';
-	font-style: normal;
-}
-
 /*	    __  ___________    ____  __________ 
 	   / / / / ____/   |  / __ \/ ____/ __ \
 	  / /_/ / __/ / /| | / / / / __/ / /_/ /
@@ -424,6 +419,12 @@ section.main-section .page-wrap h1{
 	text-align: center;
 	line-height: 50px;
 	margin-right: 5px;
+}
+
+.btn-ticket i,
+.btn-social i{
+	font-family: 'fontawesome';
+	font-style: normal;
 }
 
 .btn-social:hover{
@@ -1173,3 +1174,104 @@ header.main-header ul.menu li a.grand-logo .icon-logo{
 }
 
 
+
+.zakaz-biletov{
+  width: 620px;
+}
+
+.zakaz-biletov label{
+	font: 18px arial;
+	color: #727272;
+	display: block;
+}
+
+.zakaz-biletov input[type=text],
+.zakaz-biletov input[type=email]{
+	height: 41px;
+	background: #e8e8e8;
+	color: #006587;
+	border: none;
+	font: 18px arial;
+	padding: 0 13px;
+	margin: 0 0 16px 0;
+	width: 286px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.zakaz-biletov textarea{	
+	background: #e8e8e8;
+	color: #006587;
+	border: none;
+	font: 18px arial;
+	padding: 0 13px;
+	margin: 0 0 16px 0;
+	width: 96%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.zakaz-biletov input[type=submit]{
+	font: 18px arial;
+	border-bottom: 2px solid #08799e;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	background: #00a9e1;
+	color: white;
+	padding: 6px 15px;
+	margin: 30px 0 0 0;
+}
+
+.zakaz-biletov label span{
+	color: #b03131;
+}
+
+.zakaz-biletov .wpcf7-list-item-label{
+	font: 18px arial;
+	color: #727272;
+}
+
+.wpcf7-response-output{
+	float: left;
+}
+
+.media-block{
+	height: 508px;
+	position: relative;	
+}
+
+.media-block img{
+	width: 100%;
+}
+
+.media-block .media-titles{
+	background: none repeat scroll 0 0 rgba(41, 57, 73, 0.8);
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	padding: 20px 40px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.media-block .media-titles .title{
+	color: white;
+	font-size: 26px;
+	display: block;
+}
+
+.media-block .media-titles .date{
+	display: block;
+	text-decoration: underline;
+	color: #00BFFF;
+}

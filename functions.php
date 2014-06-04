@@ -76,6 +76,7 @@ add_image_size('row-second-image', 580, 310, true);
 add_image_size('ticket-image', 280, 400, true);
 add_image_size('gallery-image', 310, 210, true);
 add_filter( 'image_size_names_choose', 'namespace_image_size_names_choose' );
+//add_filter( 'posts_where' , 'customWhere' );
 
 
 // =========================================================
@@ -91,11 +92,29 @@ $GLOBALS['archive'] = new PostTypeFactory('archive', array('label' => 'Архи�
 $GLOBALS['archive']->addMetaBox('Time', array('Time' => 'text'));
 $GLOBALS['archive']->meta_box_context = 'side';
 // =========================================================
+// События
+// =========================================================
+$GLOBALS['pt_gcevent'] = new PostTypeFactory('gcevent', array('label' => 'Билеты'));
+$GLOBALS['pt_gcevent']->addMetaBox('Partners', array('urls' => array('table', array('image source', 'url'))));
+// =========================================================
 // GENERATE TEST POSTS
 // =========================================================
 // $lorem_posts = new LoremPosts();
 // $lorem_posts->generatePosts(10, 'archive');
 // $lorem_posts->generatePosts(10, 'afisha');
+
+
+
+function customWhere($where)
+{
+	if(is_admin()) return $where;
+	if(strpos($where, "wp_posts.post_type = 'afisha'") !== false)
+	{
+		$where .= " AND post_date >= '".date('Y-m-d"')."'";
+	}
+	
+	return $where;
+}
 
 function namespace_image_size_names_choose( $image_sizes ) 
 {
@@ -144,4 +163,19 @@ function active($bool = true)
 	if($bool) return 'active';
 	return '';
 }
+
+function printPerRow($items, $columns = 3)
+{
+	for ($i=0; $i < count($items); $i+=$columns) 
+	{ 
+		echo '<div class="row">';
+		for ($j=0; $j < $columns; $j++) 
+		{ 
+			if(isset($items[$i+$j])) echo $items[$i+$j];
+		}
+		echo '</div>';
+	}
+}
+
+
 ?>

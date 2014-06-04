@@ -4,6 +4,7 @@
  */
 get_header(); 
 
+
 ?>
 <section class="main-section">	
 	<ul class="media-header text-left news-header">					
@@ -27,7 +28,7 @@ get_header();
 			'order'            => 'DESC',
 			'post_type'        => 'afisha',
 			'post_status'      => 'publish',
-			'suppress_filters' => true );
+			'suppress_filters' => false );
 
 		query_posts($args);
 		if(have_posts())
@@ -35,6 +36,7 @@ get_header();
 			?>
 			<div class="row repertuar-objects">
 			<?php
+			$items = array();
 			while(have_posts())
 			{
 				the_post();
@@ -42,6 +44,7 @@ get_header();
 				$time_str      = $time != '' ? sprintf('<span class="time"> // %s</span>', $time) : '';
 				$default_image = '<img src="http://placehold.it/280x395/0092c3/fff" alt="'.get_the_title().'">';
 				$img           = (has_post_thumbnail()) ? '<a href="'.get_permalink().'">'.get_the_post_thumbnail(get_the_ID(), 'repertuar-image').'</a>' : $default_image;
+				ob_start();
 				?>
 				<div class="col-md-3 col-lg-3 item">
 					<?php echo $img; ?>
@@ -49,7 +52,11 @@ get_header();
 					<span><?php echo $GLOBALS['gcevents']->get_short_string(200, strip_tags(get_the_content())); ?></span>
 				</div>
 				<?php
+				$var = ob_get_contents();
+				array_push($items, $var);
+    			ob_end_clean();
 			}
+			printPerRow($items);
 			?>
 			</div>
 			<?php

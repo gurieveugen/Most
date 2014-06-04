@@ -26,7 +26,7 @@ get_header();
 			'order'            => 'DESC',
 			'post_type'        => 'afisha',
 			'post_status'      => 'publish',
-			'suppress_filters' => true );
+			'suppress_filters' => false );
 
 		query_posts($args);
 		if(have_posts())
