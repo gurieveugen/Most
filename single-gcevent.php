@@ -5,8 +5,9 @@ $meta = get_post_meta($post->ID, 'gcevents', true);
 if($meta['cost'] == "") $cost = "";
 else if(intval($meta['cost']) == 0) $cost = "Свободный вход!";
 else $cost = '<strong>'.$meta['cost'].' '.$meta['currency_symbol'].'</strong>  <a class="btn-ticket btn-ticket-modal" href="#" data-id="'.$post->ID.'"><i class="fa-rub fa-2x"></i><span>Купить билеты</span></a>';
-$el = $post;
-$el->meta = get_post_meta($value->ID, 'gcevent_urls', true);
+//$el = $post;
+$el->meta['partners'] = get_post_meta($post->ID, 'gcevent_urls', true);
+$el->ID = $post->ID;
 echo $GLOBALS['gcevents']->gcevent_post->getModal($el);
 echo $GLOBALS['gcevents']->gcevent_post->getBuyThere();
 
@@ -44,7 +45,7 @@ echo $GLOBALS['gcevents']->gcevent_post->getBuyThere();
 		if($images)
 		{
 
-			foreach ($images as $key => $value) 
+			foreach ($images as $key => $el) 
 			{
 				?>
 				<div class="col-md-3 col-lg-3"><a class="fancybox" rel="group" href="<?php echo $value['full']; ?>"><img src="<?php echo $value['small']; ?>" alt="" /></a></div>

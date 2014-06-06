@@ -127,7 +127,7 @@ class GCTruppa{
 			'offset'           => 0,
 			'category'         => '',
 			'orderby'          => $order,
-			'order'            => 'DESC',
+			'order'            => 'ASC',
 			'post_type'        => 'member',
 			'post_status'      => 'publish',
 			'suppress_filters' => true );
@@ -163,7 +163,7 @@ class GCTruppa{
 	 */
 	public function displayAllTruppa()
 	{
-		$truppa = $this->getMembers(-1, true);
+		$truppa = $this->getMembers(-1, false);
 		foreach ($truppa as $key => $value) 
 		{
 		 	$img_src   = 'http://placehold.it/300x300/0092c3/fff';

@@ -3,7 +3,7 @@ get_header();
 $gcevents = $GLOBALS['gcevents'];
 $gctruppa = $GLOBALS['gctruppa'];
 $upcoming_first_row  = $gcevents->gcevent_post->getUpcomingEvents(2);
-$upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
+$upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(3, 2);
 
 ?>
 	<section class="main-section">
@@ -13,12 +13,11 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 		// =========================================================
 		echo '<div class="row row-firts tickets">';
 		foreach ($upcoming_first_row as $key => $value) 
-		{
-			
+		{			
 			$img_src   = get_bloginfo('template_url').'/images/nophoto.jpg';
-			if(has_post_thumbnail($key))
+			if(has_post_thumbnail($value->ID))
 			{
-				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($key), 'row-first-image');
+				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($value->ID), 'row-first-image');
 				$img_src = $img_src[0];
 			}
 
@@ -33,11 +32,11 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><a href="<?php echo get_permalink($key); ?>"><?php echo $value->post_title; ?></a></span>						
+							<span class="title"><a href="<?php echo get_permalink($value->ID); ?>"><?php echo $value->post_title; ?></a></span>						
 							<span class="date"><?php echo $day.' '.$month.' '.$year; ?>  // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
-							<a href="<?php echo get_permalink($key); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><span><?php echo $gcevents->l('buy_tickets'); ?></span></a>
+							<a href="<?php echo get_permalink($value->ID); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><span><?php echo $gcevents->l('buy_tickets'); ?></span></a>
 						</div>
 					</div>
 				</div><!-- end additional-info -->
@@ -54,9 +53,9 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 		{
 			
 			$img_src   = get_bloginfo('template_url').'/images/nophoto.jpg';
-			if(has_post_thumbnail($key))
+			if(has_post_thumbnail($value->ID))
 			{
-				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($key), 'row-second-image');
+				$img_src = wp_get_attachment_image_src(get_post_thumbnail_id($value->ID), 'row-second-image');
 				$img_src = $img_src[0];
 			}
 
@@ -71,11 +70,11 @@ $upcoming_second_row = $gcevents->gcevent_post->getUpcomingEvents(5, 2);
 				<div class="additional-info">
 					<div class="row">
 						<div class="col-md-8 col-lg-8">
-							<span class="title"><a href="<?php echo get_permalink($key); ?>"><?php echo $value->post_title; ?></a></span>
+							<span class="title"><a href="<?php echo get_permalink($value->ID); ?>"><?php echo $value->post_title; ?></a></span>
 							<span class="date"><?php echo $day.' '.$month.' '.$year; ?> // <?php echo sprintf('%02d', $value->meta['start_hour']).':'.sprintf('%02d', $value->meta['start_minute']); ?></span>
 						</div>
 						<div class="col-md-4 col-lg-4">
-							<a href="<?php echo get_permalink($key); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><i class="fa-ticket fa-2x" style="background: transparent"></i></a>
+							<a href="<?php echo get_permalink($value->ID); ?>" class="btn-ticket"><i class="fa-rub fa-2x"></i><i class="icon-ticket-small" style="background: transparent"></i></a>
 						</div>
 					</div>
 				</div><!-- end additional-info -->

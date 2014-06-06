@@ -46,10 +46,15 @@ class PostTypeFactory{
         }
 
         add_action('save_post', array(&$this, 'savePost'));
-        add_action('post_edit_form_tag', function() { echo ' enctype="multipart/form-data"'; });     
+        add_action('post_edit_form_tag', array(&$this, 'addFormTag'));     
         add_action('admin_enqueue_scripts', array(&$this, 'adminScriptsAndStyles'));
         
 
+    }
+
+    public function addFormTag()
+    {
+        echo ' enctype="multipart/form-data"';
     }
 
     /**
@@ -431,7 +436,7 @@ class PostTypeFactory{
             'select'   => $this->getSelectControl($name, $items, $value), 
             'table'    => $this->getTableControl($name, $items, $value),
             'file'     => '<input type="file" name="%1$s" id="%1$s" />');
-        
+        if($type == 'table') return $types[$type];
         return sprintf($types[$type], $name, $value);
     }
 
@@ -443,7 +448,7 @@ class PostTypeFactory{
      * @return string         --- html code
      */
     private function getTableControl($name, $columns, $rows)
-    {
+    {        
         if(!$columns) return '';
 
         $thead   = '';

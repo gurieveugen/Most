@@ -693,18 +693,33 @@ h2.member-text{
 .get-there form input[type=text]{
 	border-radius: 0;
 	background: #008ebd;
-	color: #8dcce1;
+	color: white;
 	border: none;
 	padding: 6px 14px;
 	margin: 0 0 26px 0;
 }
 
-.get-there form input::-webkit-input-placeholder { color: #8dcce1; }
-.get-there form textarea::-webkit-input-placeholder { color: #8dcce1; }
+.get-there form input::-webkit-input-placeholder { color: red; }
+.get-there form textarea::-webkit-input-placeholder { color: red; }
+
+.get-there form ::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+.get-there form :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+    opacity:  1;
+}
+.get-there form ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    opacity:  1;
+}
+.get-there form :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+}
 
 .get-there form textarea{
 	background: #008ebd;
-	color: #8dcce1;
+	color: white;
 	border-radius: 0;
 	border: none;
 	padding: 6px 14px;
@@ -715,7 +730,7 @@ h2.member-text{
 .get-there form select{
 	background: none repeat scroll 0 0 #008EBD;
 	border: medium none;
-	color: #8DCCE1;
+	color: white;
 	height: 30px;
 	line-height: 30px;
 	margin-bottom: 27px;
@@ -980,12 +995,30 @@ section.main-section ul.media-header li.active a{
 	width: 38px;
 }
 
+.icon-studio{
+	background: url("img/micro.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
+	display: inline-block;
+	height: 40px;
+	margin: 0 0 0 10px;
+	width: 38px;
+}
+
 .icon-tickets{
-	background: url("img/icons/tickets.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
+	background: url("img/ticket.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0);
 	display: inline-block;
 	height: 40px;
 	margin: 10px;
 	width: 38px;
+}
+
+.icon-ticket-small{
+	background: url("img/ticket.png") no-repeat scroll 0 0 / contain  rgba(0, 0, 0, 0) !important;
+	display: inline-block;
+	height: 25px !important;
+	left: 8px;
+	position: relative;
+	top: 4px;
+	width: 25px !important;
 }
 
 .icon-media{
@@ -1069,11 +1102,11 @@ li#menu-item-8 ul{
 }
 
 header.main-header ul.menu li a.grand-logo{
-	height: 200px;
+	height: 100px;
 }
 
 header.main-header ul.menu li a.grand-logo .icon-logo{
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 
